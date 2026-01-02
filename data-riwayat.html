@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Data Riwayat</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+body {
+    margin: 0;
+    background: #e5e7eb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* WRAPPER */
+.phone-wrapper {
+    width: 390px;
+    height: 780px;
+    background: #f4f6f9;
+    border-radius: 30px;
+    overflow: hidden;
+    border: 8px solid #111;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+}
+
+/* HEADER */
+.header {
+    background: #3b82f6;
+    color: white;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.back-btn {
+    color: white;
+    text-decoration: none;
+    font-size: 22px;
+}
+
+.title {
+    font-size: 17px;
+    font-weight: 600;
+}
+
+/* CONTENT */
+.content {
+    padding: 14px;
+    height: calc(100% - 64px);
+    overflow-y: auto;
+}
+
+/* SUMMARY */
+.summary {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.summary-box {
+    background: white;
+    border-radius: 12px;
+    padding: 10px 6px;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.summary-box .count {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.summary-box .label {
+    font-size: 11px;
+    color: #555;
+}
+
+.input { color: #2563eb; }
+.user { color: #16a34a; }
+.update { color: #ca8a04; }
+.alert { color: #dc2626; }
+
+/* FILTER */
+.filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.filter span {
+    padding: 6px 12px;
+    border-radius: 14px;
+    background: white;
+    font-size: 12px;
+    border: 1px solid #e5e7eb;
+    cursor: pointer;
+}
+
+.filter span.active {
+    background: #3b82f6;
+    color: white;
+    border-color: #3b82f6;
+}
+
+/* CARD */
+.card {
+    background: white;
+    border-radius: 14px;
+    padding: 12px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.badge {
+    font-size: 11px;
+    padding: 3px 8px;
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+.badge.input {
+    background: #dbeafe;
+    color: #1d4ed8;
+}
+
+.badge.user {
+    background: #dcfce7;
+    color: #15803d;
+}
+
+.badge.update {
+    background: #fef3c7;
+    color: #b45309;
+}
+
+.badge.alert {
+    background: #fee2e2;
+    color: #b91c1c;
+}
+
+.time {
+    font-size: 11px;
+    color: #6b7280;
+}
+
+.card-title {
+    font-weight: 600;
+    margin-top: 6px;
+}
+
+.card-desc {
+    font-size: 13px;
+    margin-top: 2px;
+}
+
+.card-meta {
+    font-size: 11px;
+    color: #6b7280;
+    margin-top: 4px;
+}
+
+/* EXPORT */
+.export-btn {
+    margin-top: 12px;
+    width: 100%;
+    padding: 12px;
+    border-radius: 12px;
+    border: none;
+    background: #3b82f6;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div class="phone-wrapper">
+
+    <!-- HEADER -->
+    <div class="header">
+        <a href="dashboard-admin.html" class="back-btn">←</a>
+        <div class="title">Data Riwayat</div>
+    </div>
+
+    <div class="content">
+
+        <!-- SUMMARY -->
+        <div class="summary">
+            <div class="summary-box">
+                <div class="count input">12</div>
+                <div class="label">Input</div>
+            </div>
+            <div class="summary-box">
+                <div class="count user">5</div>
+                <div class="label">User</div>
+            </div>
+            <div class="summary-box">
+                <div class="count update">8</div>
+                <div class="label">Update</div>
+            </div>
+            <div class="summary-box">
+                <div class="count alert">2</div>
+                <div class="label">Alert</div>
+            </div>
+        </div>
+
+        <!-- FILTER -->
+        <div class="filter">
+            <span class="active">Semua</span>
+            <span>Input</span>
+            <span>User</span>
+            <span>Update</span>
+            <span>Alert</span>
+        </div>
+
+        <!-- CARD ITEM -->
+        <div class="card">
+            <div class="card-top">
+                <span class="badge input">Input Data</span>
+                <span class="time">00:07</span>
+            </div>
+            <div class="card-title">Menambahkan data tambak</div>
+            <div class="card-desc">pH 7.5, Suhu 28.5°C</div>
+            <div class="card-meta">👤 Budi Santoso</div>
+            <div class="card-meta">03 Januari 2026, 00:07</div>
+        </div>
+
+        <div class="card">
+            <div class="card-top">
+                <span class="badge user">User</span>
+                <span class="time">23:07</span>
+            </div>
+            <div class="card-title">Menambahkan pengguna baru</div>
+            <div class="card-desc">Siti Nurhaliza</div>
+            <div class="card-meta">👤 Admin</div>
+            <div class="card-meta">02 Januari 2026, 23:07</div>
+        </div>
+
+        <div class="card">
+            <div class="card-top">
+                <span class="badge update">Update</span>
+                <span class="time">22:07</span>
+            </div>
+            <div class="card-title">Update data operasional</div>
+            <div class="card-desc">Pemberian pakan 25kg</div>
+            <div class="card-meta">👤 Ahmad Wijaya</div>
+            <div class="card-meta">02 Januari 2026, 22:07</div>
+        </div>
+
+        <div class="card">
+            <div class="card-top">
+                <span class="badge alert">Alert</span>
+                <span class="time">21:07</span>
+            </div>
+            <div class="card-title">Alert parameter tidak normal</div>
+            <div class="card-desc">Tambak C3 - pH rendah</div>
+            <div class="card-meta">⚙ Sistem</div>
+            <div class="card-meta">02 Januari 2026, 21:07</div>
+        </div>
+
+        <div class="card">
+            <div class="card-top">
+                <span class="badge input">Input Data</span>
+                <span class="time">20:07</span>
+            </div>
+            <div class="card-title">Input data monitoring</div>
+            <div class="card-desc">Kondisi kolam normal</div>
+            <div class="card-meta">👤 Siti Nurhaliza</div>
+            <div class="card-meta">02 Januari 2026, 20:07</div>
+        </div>
+
+        <button class="export-btn">📤 Export Data Riwayat</button>
+
+    </div>
+</div>
+
+</body>
+</html>

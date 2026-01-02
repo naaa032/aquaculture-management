@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Monitoring Tambak</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+body {
+    margin: 0;
+    background: #e5e7eb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* WRAPPER */
+.phone-wrapper {
+    width: 390px;
+    height: 780px;
+    background: #f4f6f9;
+    border-radius: 30px;
+    overflow: hidden;
+    border: 8px solid #111;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+}
+
+/* HEADER */
+.header {
+    background: #3b82f6;
+    color: white;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.back-btn {
+    color: white;
+    text-decoration: none;
+    font-size: 22px;
+}
+
+.title {
+    font-size: 17px;
+    font-weight: 600;
+}
+
+/* CONTENT */
+.content {
+    padding: 14px;
+    height: calc(100% - 64px);
+    overflow-y: auto;
+}
+
+/* SUMMARY BOX */
+.summary {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.summary-box {
+    background: white;
+    border-radius: 12px;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.summary-box .count {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.summary-box .label {
+    font-size: 12px;
+    color: #555;
+}
+
+.normal { color: #16a34a; }
+.warning { color: #ca8a04; }
+.danger  { color: #dc2626; }
+
+/* ALERT */
+.alert {
+    background: #fef3c7;
+    border: 1px solid #fde68a;
+    color: #92400e;
+    border-radius: 12px;
+    padding: 10px;
+    font-size: 13px;
+    margin-bottom: 14px;
+    display: flex;
+    gap: 8px;
+}
+
+/* SECTION TITLE */
+.section-title {
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+/* CARD */
+.card {
+    background: white;
+    border-radius: 16px;
+    padding: 14px;
+    margin-bottom: 14px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.left {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: #3b82f6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 22px;
+}
+
+.name {
+    font-weight: 700;
+    font-size: 15px;
+}
+
+.location {
+    font-size: 12px;
+    color: #666;
+}
+
+.status {
+    font-size: 11px;
+    padding: 3px 8px;
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+.status.normal {
+    background: #dcfce7;
+    color: #15803d;
+}
+
+.status.warning {
+    background: #fef3c7;
+    color: #b45309;
+}
+
+.status.danger {
+    background: #fee2e2;
+    color: #b91c1c;
+}
+
+/* SENSOR */
+.sensor {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px dashed #ddd;
+    font-size: 13px;
+}
+
+.sensor div {
+    text-align: center;
+}
+</style>
+</head>
+
+<body>
+
+<div class="phone-wrapper">
+
+    <!-- HEADER -->
+    <div class="header">
+        <a href="dashboard-admin.html" class="back-btn">←</a>
+        <div class="title">Monitoring Tambak</div>
+    </div>
+
+    <div class="content">
+
+        <!-- SUMMARY -->
+        <div class="summary">
+            <div class="summary-box">
+                <div class="count normal">2</div>
+                <div class="label">Normal</div>
+            </div>
+            <div class="summary-box">
+                <div class="count warning">1</div>
+                <div class="label">Perhatian</div>
+            </div>
+            <div class="summary-box">
+                <div class="count danger">0</div>
+                <div class="label">Bahaya</div>
+            </div>
+        </div>
+
+        <!-- ALERT -->
+        <div class="alert">
+            ⚠️ 1 tambak memerlukan perhatian  
+            <br>
+            <small>Tambak Nila C3 – pH rendah & suhu tinggi</small>
+        </div>
+
+        <div class="section-title">Semua Tambak</div>
+
+        <!-- CARD 1 -->
+        <div class="card">
+            <div class="card-top">
+                <div class="left">
+                    <div class="icon">🌊</div>
+                    <div>
+                        <div class="name">Tambak Udang A1</div>
+                        <div class="location">Sidoarjo</div>
+                    </div>
+                </div>
+                <span class="status normal">normal</span>
+            </div>
+
+            <div class="sensor">
+                <div>
+                    <div>pH Air</div>
+                    <strong>7.5</strong>
+                </div>
+                <div>
+                    <div>Suhu</div>
+                    <strong>28.5°C</strong>
+                </div>
+            </div>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="card">
+            <div class="card-top">
+                <div class="left">
+                    <div class="icon">🌊</div>
+                    <div>
+                        <div class="name">Tambak Bandeng B2</div>
+                        <div class="location">Gresik</div>
+                    </div>
+                </div>
+                <span class="status normal">normal</span>
+            </div>
+
+            <div class="sensor">
+                <div>
+                    <div>pH Air</div>
+                    <strong>7.8</strong>
+                </div>
+                <div>
+                    <div>Suhu</div>
+                    <strong>29.2°C</strong>
+                </div>
+            </div>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="card">
+            <div class="card-top">
+                <div class="left">
+                    <div class="icon">🌊</div>
+                    <div>
+                        <div class="name">Tambak Nila C3</div>
+                        <div class="location">Lamongan</div>
+                    </div>
+                </div>
+                <span class="status warning">warning</span>
+            </div>
+
+            <div class="sensor">
+                <div>
+                    <div>pH Air</div>
+                    <strong>6.8</strong>
+                </div>
+                <div>
+                    <div>Suhu</div>
+                    <strong>30.5°C</strong>
+                </div>
+            </div>
+        </div>
+
+        <!-- FILTER -->
+        <div class="card">
+            <div class="section-title">Filter Lokasi</div>
+            <div style="display:flex; flex-wrap:wrap; gap:8px; margin-top:8px;">
+                <span class="status normal">Semua</span>
+                <span class="status">Sidoarjo</span>
+                <span class="status">Gresik</span>
+                <span class="status">Lamongan</span>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>

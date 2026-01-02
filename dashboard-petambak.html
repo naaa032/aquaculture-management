@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard Petambak</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, sans-serif;
+}
+
+body {
+    margin: 0;
+    background: #e5e7eb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* ================= OUTER PHONE ================= */
+.mobile {
+    width: 390px;
+    height: 780px;
+    background: #f8fafc;
+    border-radius: 30px;
+    border: 8px solid #000;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+    overflow: hidden;
+}
+
+/* ================= HEADER ================= */
+.header {
+    background: #3b82f6;
+    padding: 20px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.avatar {
+    width: 42px;
+    height: 42px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    color: #3b82f6;
+}
+
+.header-text p {
+    margin: 0;
+    font-size: 12px;
+    opacity: .9;
+}
+
+.header-text h2 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.logout {
+    font-size: 22px;
+    color: white;
+    text-decoration: none;
+}
+
+/* ================= SECTION TITLE ================= */
+.section-title {
+    padding: 18px 18px 10px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+/* ================= MENU GRID ================= */
+.menu {
+    padding: 0 16px 12px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+/* ================= CARD ================= */
+.card {
+    background: white;
+    border-radius: 20px;
+    padding: 18px;
+    text-decoration: none;
+    color: #111;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+}
+
+/* icon */
+.icon-box {
+    width: 46px;
+    height: 46px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    color: white;
+}
+
+.bg-blue { background: #3b82f6; }
+.bg-green { background: #10b981; }
+.bg-purple { background: #8b5cf6; }
+.bg-orange { background: #f59e0b; }
+
+.card b {
+    font-size: 15px;
+    display: block;
+}
+
+.card p {
+    font-size: 12px;
+    color: #64748b;
+    margin: 0;
+}
+
+/* ================= STATS ================= */
+.stats {
+    padding: 0 16px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 6px;
+}
+
+.stat-card {
+    background: white;
+    border-radius: 18px;
+    padding: 16px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.stat-card p {
+    margin: 0;
+    font-size: 12px;
+    color: #64748b;
+}
+
+.stat-card h3 {
+    margin: 6px 0 0;
+    font-size: 22px;
+}
+
+.text-blue { color: #2563eb; }
+.text-green { color: #16a34a; }
+
+/* ================= STATUS ================= */
+.status-bar {
+    margin: 16px;
+    background: #eef4ff;
+    border-radius: 18px;
+    padding: 14px 16px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.status-icon {
+    font-size: 26px;
+    color: #3b82f6;
+}
+
+.status-text p {
+    margin: 0;
+    font-size: 12px;
+    color: #64748b;
+}
+
+.status-text h4 {
+    margin: 2px 0 0;
+    font-size: 14px;
+    color: #16a34a;
+}
+</style>
+</head>
+
+<body>
+
+<div class="mobile">
+
+    <!-- HEADER -->
+    <div class="header">
+        <div class="header-left">
+            <div class="avatar">P</div>
+            <div class="header-text">
+                <p>Petambak</p>
+                <h2>Dashboard</h2>
+            </div>
+        </div>
+        <a href="index.html" class="logout">➜]</a>
+    </div>
+
+    <div class="section-title">Menu Petambak</div>
+
+    <!-- MENU -->
+    <div class="menu">
+
+        <a href="input-data-petambak.html" class="card">
+            <div class="icon-box bg-blue">📝</div>
+            <div>
+                <b>Input Data Tambak</b>
+                <p>Catat data harian tambak</p>
+            </div>
+        </a>
+
+        <a href="data-operasional-petambak.html" class="card">
+            <div class="icon-box bg-green">✔</div>
+            <div>
+                <b>Data Operasional</b>
+                <p>Kelola aktivitas tambak</p>
+            </div>
+        </a>
+
+        <a href="monitoring-petambak.html" class="card">
+            <div class="icon-box bg-purple">📈</div>
+            <div>
+                <b>Monitoring Tambak</b>
+                <p>Pantau kondisi tambak</p>
+            </div>
+        </a>
+
+        <a href="jadwal-tambak-petambak.html" class="card">
+            <div class="icon-box bg-orange">📅</div>
+            <div>
+                <b>Jadwal Tambak</b>
+                <p>Kelola jadwal kegiatan</p>
+            </div>
+        </a>
+
+    </div>
+
+    <!-- STATS -->
+    <div class="stats">
+        <div class="stat-card">
+            <p>Total Tambak</p>
+            <h3 class="text-blue">3</h3>
+        </div>
+        <div class="stat-card">
+            <p>Status Aktif</p>
+            <h3 class="text-green">3</h3>
+        </div>
+    </div>
+
+    <!-- STATUS -->
+    <div class="status-bar">
+        <div class="status-icon">✔</div>
+        <div class="status-text">
+            <p>Status Sistem</p>
+            <h4>Semua Sistem Aktif</h4>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitoring Tambak</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            margin: 0;
+            background: #e5e7eb;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .mobile {
+            width: 390px;
+            height: 780px;
+            background: #f8fafc;
+            border-radius: 30px;
+            border: 8px solid #000;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+            overflow: hidden;
+        }
+
+        .header {
+            background: #3b82f6;
+            color: white;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .header a {
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .header span {
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        /* === CARD UTAMA (outline hitam + shadow halus) === */
+        .status-card,
+        .history-card {
+            background: white;
+            border-radius: 20px;
+            padding: 20px;
+            border: 1.5px #000;
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+            margin-bottom: 20px;
+        }
+
+        /* STATUS HEADER */
+        .status-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 25px;
+        }
+
+        .status-title p {
+            margin: 0;
+            font-size: 14px;
+            color: #64748b;
+        }
+
+        .status-title h3 {
+            margin: 5px 0 0 0;
+            color: #1e293b;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .dot-green {
+            width: 10px;
+            height: 10px;
+            background: #10b981;
+            border-radius: 50%;
+        }
+
+        .pulse-icon {
+            color: #10b981;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        /* GRID PARAMETER */
+        .param-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            text-align: center;
+            border-top: 1px solid #eef2f7;
+            padding-top: 20px;
+        }
+
+        .param-item .icon {
+            font-size: 20px;
+            margin-bottom: 6px;
+        }
+
+        .param-item .label {
+            font-size: 12px;
+            color: #94a3b8;
+            margin-bottom: 4px;
+        }
+
+        .param-item .value {
+            font-size: 16px;
+            font-weight: 700;
+            color: #1e293b;
+        }
+
+        .text-blue { color: #3b82f6; }
+        .text-red { color: #ef4444; }
+        .text-green { color: #10b981; }
+
+        /* RIWAYAT */
+        .history-card h3 {
+            margin: 0 0 20px 0;
+            font-size: 16px;
+            color: #1e293b;
+        }
+
+        /* item dalam → TANPA outline */
+        .history-item {
+            background: #f8fafc;
+            border-radius: 14px;
+            padding: 12px 15px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .bg-green { background: #10b981; }
+        .bg-yellow { background: #f59e0b; }
+
+        .history-info b {
+            font-size: 14px;
+            color: #334155;
+            display: block;
+        }
+
+        .history-info span {
+            font-size: 12px;
+            color: #94a3b8;
+        }
+    </style>
+</head>
+<body>
+
+<div class="mobile">
+    <div class="header">
+        <a href="dashboard-petambak.html">←</a>
+        <span>Monitoring Tambak</span>
+    </div>
+
+    <div class="content">
+        <div class="status-card">
+            <div class="status-header">
+                <div class="status-title">
+                    <p>Status Tambak</p>
+                    <h3><span class="dot-green"></span> Normal</h3>
+                </div>
+                <div class="pulse-icon">~v~</div>
+            </div>
+
+            <div class="param-grid">
+                <div class="param-item">
+                    <div class="icon text-blue">💧</div>
+                    <div class="label">pH</div>
+                    <div class="value">7.5</div>
+                </div>
+                <div class="param-item">
+                    <div class="icon text-red">🌡️</div>
+                    <div class="label">Suhu</div>
+                    <div class="value">28.5°C</div>
+                </div>
+                <div class="param-item">
+                    <div class="icon text-green">📈</div>
+                    <div class="label">O₂</div>
+                    <div class="value">6.8</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="history-card">
+            <h3>Riwayat Monitoring</h3>
+
+            <div class="history-item">
+                <div class="status-dot bg-green"></div>
+                <div class="history-info">
+                    <b>Semua parameter normal</b>
+                    <span>2 jam lalu</span>
+                </div>
+            </div>
+
+            <div class="history-item">
+                <div class="status-dot bg-green"></div>
+                <div class="history-info">
+                    <b>pH sedikit naik</b>
+                    <span>5 jam lalu</span>
+                </div>
+            </div>
+
+            <div class="history-item">
+                <div class="status-dot bg-yellow"></div>
+                <div class="history-info">
+                    <b>Suhu tinggi, aerasi ditambah</b>
+                    <span>8 jam lalu</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

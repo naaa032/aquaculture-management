@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard Admin</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+body {
+    margin: 0;
+    background: #e5e7eb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* WRAPPER */
+.phone-wrapper {
+    width: 390px;
+    height: 780px;
+    background: #f4f6f9;
+    border-radius: 30px;
+    overflow: hidden;
+    border: 8px solid #111;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+}
+
+/* HEADER */
+.header {
+    background: #3b82f6;
+    color: white;
+    padding: 18px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: white;
+    color: #3b82f6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.profile-text p {
+    margin: 0;
+    font-size: 12px;
+    opacity: 0.9;
+}
+
+.profile-text h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.logout {
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+/* CONTENT */
+.content {
+    padding: 14px;
+    overflow-y: auto;
+    height: calc(100% - 72px);
+}
+
+/* SECTION TITLE */
+.section-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 6px 0 14px;
+}
+
+/* MENU GRID */
+.menu {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+
+/* CARD MENU */
+.menu-card {
+    background: white;
+    border-radius: 18px;
+    padding: 16px;
+    text-decoration: none;
+    color: #111;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    transition: 0.15s;
+}
+
+.menu-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+}
+
+.icon-box {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    color: white;
+}
+
+.bg-blue { background: #3b82f6; }
+.bg-green { background: #10b981; }
+.bg-purple { background: #8b5cf6; }
+.bg-orange { background: #f59e0b; }
+
+.menu-title {
+    font-weight: 700;
+    font-size: 15px;
+}
+
+.menu-desc {
+    font-size: 12px;
+    color: #64748b;
+}
+
+/* STATS */
+.stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-top: 16px;
+}
+
+.stat-card {
+    background: white;
+    border-radius: 18px;
+    padding: 16px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.stat-card p {
+    margin: 0;
+    font-size: 12px;
+    color: #64748b;
+}
+
+.stat-card h3 {
+    margin: 10px 0 0;
+    font-size: 24px;
+}
+
+.text-blue { color: #3b82f6; }
+.text-green { color: #10b981; }
+
+/* SYSTEM STATUS */
+.system-status {
+    margin-top: 16px;
+    background: #eef5ff;
+    border-radius: 18px;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.system-icon {
+    font-size: 28px;
+    color: #3b82f6;
+}
+
+.system-text p {
+    margin: 0;
+    font-size: 12px;
+    color: #64748b;
+}
+
+.system-text h4 {
+    margin: 2px 0 0;
+    font-size: 14px;
+    color: #16a34a;
+}
+</style>
+</head>
+
+<body>
+
+<div class="phone-wrapper">
+
+    <!-- HEADER -->
+    <div class="header">
+        <div class="profile">
+            <div class="avatar">Ad</div>
+            <div class="profile-text">
+                <p>Administrator</p>
+                <h3>admin</h3>
+            </div>
+        </div>
+        <a href="index.html" class="logout">➜]</a>
+    </div>
+
+    <div class="content">
+
+        <div class="section-title">Menu Admin</div>
+
+        <!-- MENU -->
+        <div class="menu">
+            <a href="kelola-pengguna.html" class="menu-card">
+                <div class="icon-box bg-blue">👥</div>
+                <div>
+                    <div class="menu-title">Kelola Data Pengguna</div>
+                    <div class="menu-desc">Manajemen akun petambak</div>
+                </div>
+            </a>
+
+            <a href="kelola-tambak.html" class="menu-card">
+                <div class="icon-box bg-green">🗄️</div>
+                <div>
+                    <div class="menu-title">Kelola Data Tambak</div>
+                    <div class="menu-desc">Manajemen data tambak</div>
+                </div>
+            </a>
+
+            <a href="monitoring-admin.html" class="menu-card">
+                <div class="icon-box bg-purple">📈</div>
+                <div>
+                    <div class="menu-title">Monitoring Tambak</div>
+                    <div class="menu-desc">Pantau kondisi tambak</div>
+                </div>
+            </a>
+
+            <a href="data-riwayat.html" class="menu-card">
+                <div class="icon-box bg-orange">📄</div>
+                <div>
+                    <div class="menu-title">Data Riwayat</div>
+                    <div class="menu-desc">Log aktivitas sistem</div>
+                </div>
+            </a>
+        </div>
+
+        <!-- STAT -->
+        <div class="stats">
+            <div class="stat-card">
+                <p>Total Pengguna</p>
+                <h3 class="text-blue">12</h3>
+            </div>
+            <div class="stat-card">
+                <p>Total Tambak</p>
+                <h3 class="text-green">8</h3>
+            </div>
+        </div>
+
+        <!-- SYSTEM STATUS -->
+        <div class="system-status">
+            <div class="system-icon">~v~</div>
+            <div class="system-text">
+                <p>Status Sistem</p>
+                <h4>Semua Sistem Aktif</h4>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>

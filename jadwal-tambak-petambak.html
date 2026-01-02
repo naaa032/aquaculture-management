@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jadwal Tambak</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, sans-serif;
+}
+
+body {
+    margin: 0;
+    background: #e5e7eb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.mobile {
+    width: 390px;
+    height: 780px;
+    background: #f8fafc;
+    border-radius: 30px;
+    border: 8px solid #000;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+    overflow: hidden;
+}
+
+
+/* ===== HEADER ===== */
+.header {
+    background: #3b82f6;
+    padding: 22px 20px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    color: white;
+}
+
+.header a {
+    color: white;
+    text-decoration: none;
+    font-size: 22px;
+}
+
+.header span {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+/* ===== KONTEN ===== */
+.content {
+    padding: 18px;
+}
+
+/* ===== KARTU HARI INI ===== */
+.today-card {
+    background: white;
+    border-radius: 22px;
+    padding: 20px;
+    margin-bottom: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.today-text p {
+    margin: 0;
+    font-size: 13px;
+    color: #64748b;
+}
+
+.today-text h3 {
+    margin: 6px 0 14px;
+    font-size: 18px;
+    color: #111;
+}
+
+/* filter */
+.filters {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.filter-tag {
+    padding: 6px 12px;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.tag-pakan {
+    background: #eff6ff;
+    color: #3b82f6;
+}
+
+.tag-panen {
+    background: #ecfdf5;
+    color: #10b981;
+}
+
+.tag-lain {
+    background: #fffbeb;
+    color: #f59e0b;
+}
+
+.calendar-icon {
+    font-size: 32px;
+    color: #3b82f6;
+}
+
+/* ===== TANGGAL ===== */
+.date-divider {
+    margin: 20px 18px 10px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #1e293b;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* ===== LIST JADWAL ===== */
+.schedule-list {
+    padding: 0 18px;
+}
+
+.schedule-item {
+    background: white;
+    border-radius: 20px;
+    padding: 15px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* icon kotak */
+.icon-box {
+    width: 45px;
+    height: 45px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: white;
+}
+
+.bg-blue { background: #3b82f6; }
+.bg-orange { background: #f59e0b; }
+.bg-green { background: #10b981; }
+.bg-gray { background: #64748b; }
+
+.item-info b {
+    display: block;
+    font-size: 15px;
+    color: #111;
+    margin-bottom: 2px;
+}
+
+.item-info p {
+    margin: 0;
+    font-size: 13px;
+    color: #64748b;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="mobile">
+
+    <!-- HEADER -->
+    <div class="header">
+        <a href="dashboard-petambak.html">←</a>
+        <span>Jadwal Tambak</span>
+    </div>
+
+    <div class="content">
+
+        <!-- HARI INI -->
+        <div class="today-card">
+            <div class="today-text">
+                <p>Hari Ini</p>
+                <h3>Jumat, 02 Januari 2026</h3>
+
+                <div class="filters">
+                    <div class="filter-tag tag-pakan">📅 Pakan</div>
+                    <div class="filter-tag tag-panen">🐟 Panen</div>
+                    <div class="filter-tag tag-lain">📒 Lainnya</div>
+                </div>
+            </div>
+            <div class="calendar-icon">📅</div>
+        </div>
+
+        <!-- LIST -->
+        <div class="date-divider">📅 02 Januari 2026</div>
+        <div class="schedule-list">
+            <div class="schedule-item">
+                <div class="icon-box bg-blue">🍱</div>
+                <div class="item-info">
+                    <b>Pemberian Pakan Pagi</b>
+                    <p>🕒 06:00</p>
+                </div>
+            </div>
+
+            <div class="schedule-item">
+                <div class="icon-box bg-blue">🍱</div>
+                <div class="item-info">
+                    <b>Pemberian Pakan Sore</b>
+                    <p>🕒 17:00</p>
+                </div>
+            </div>
+
+            <div class="schedule-item">
+                <div class="icon-box bg-orange">📋</div>
+                <div class="item-info">
+                    <b>Pengecekan pH Air</b>
+                    <p>🕒 08:00</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="date-divider">📅 09 Januari 2026</div>
+        <div class="schedule-list">
+            <div class="schedule-item">
+                <div class="icon-box bg-green">🐟</div>
+                <div class="item-info">
+                    <b>Panen Parsial</b>
+                    <p>🕒 09:00</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="date-divider">📅 05 Januari 2026</div>
+        <div class="schedule-list">
+            <div class="schedule-item">
+                <div class="icon-box bg-gray">🧹</div>
+                <div class="item-info">
+                    <b>Pembersihan Kolam</b>
+                    <p>🕒 10:00</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>
